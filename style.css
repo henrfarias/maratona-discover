@@ -1,0 +1,273 @@
+/* Global --------------- */
+:root{
+    --dark-color: #363F5F;
+    --green: #49AA26;
+    --red:  #E92929;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 93.75%; /* 15px */
+}
+
+body {
+    background: #F0F2F5;
+    font-family: 'Poppins', sans-serif, normal;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.container {
+    margin: auto;
+    width: min(90vw, 800px);
+}
+
+h2 {
+    color: var(--dark-color);
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
+/* links & buttons --------------- */
+a {
+    text-decoration: none;
+}
+
+.button {
+    
+    color: white;
+
+    width: 48%;
+    height: 50px;
+    border:none;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+.button__new {
+    display: inline-block;
+    margin-bottom: .8rem;
+    color: var(--green);
+}
+
+.button__new:hover {
+    color: #3DD705;
+}
+
+.modal__button-save {
+    background: var(--green);
+    opacity: .8;
+}
+
+.modal__button-save:hover {
+    opacity: 1;
+}
+
+.modal__button-cancel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--red);
+    opacity: .75;
+    color: var(--red);
+    
+}
+
+.modal__button-cancel:hover {
+    opacity: 1;
+}
+
+/* Header --------------- */
+
+header {
+    background: #2D4A22;
+    text-align: center;
+}
+
+#logo {
+    color: white;
+    font-weight: 100;
+    padding: 2rem 0 10rem;
+}
+
+/* Balance --------------- */
+
+#balance {
+    margin-top: -9rem; 
+}
+
+#balance h2 {
+    color: white;
+}
+
+.card {
+    background: white;
+    border-radius: .25rem;
+    color: var(--dark-color);
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+}
+
+.card h3 {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.card p {
+    font-size: 2rem;
+    padding-top: .5rem;
+}
+
+.card.total {
+    background: var(--green);
+    color: white;
+}
+
+/* Transaction --------------- */
+.table-scroll {
+    display:block;
+    overflow-x: auto;
+}
+
+#data-table{
+    border-spacing: 0 0.5rem;
+    text-align: left;
+    width: 100%;
+}
+
+.head-row, .body-row {
+    background: white;
+    font-weight: 400;
+}
+
+.body-row {
+    opacity: 0.7;
+}
+
+.body-row:hover {
+    opacity: 1;
+}
+
+.head-row th:first-child, 
+.body-row td:first-child 
+{
+    border-radius: .25rem 0 0 .25rem;
+}
+
+.head-row th:last-child, 
+.body-row td:last-child
+{
+    border-radius: 0 .25rem .25rem 0;
+}
+
+.head-row th, .body-row td {
+    font-weight: 400;
+    color: #969CB3;
+    padding: 1rem 2rem;
+    white-space: nowrap;
+}
+
+td.incomes {
+    color: #12A454;   
+}
+
+td.expenses {
+    color: var(--red);;
+}
+
+/* Modal --------------- */
+.modal-overlay {
+    width: 100%;
+    height:100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 0;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay--active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #F0F2F5;
+    padding:2.4rem;
+    max-width: 500px;
+}
+
+/* Form --------------- */
+
+input {
+    border:none;
+    border-radius: 0.25rem;
+}
+
+.input-group {
+    margin-top: .8rem;
+}
+
+.input-group__field {
+    width:100%;
+    padding: .8rem;
+    
+}
+
+.input-group__help {
+    opacity: .5;
+}
+
+.input-group__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    width: 100%;
+}
+
+/* Footer --------------- */
+footer {
+    color: var(--dark-color);
+    font-weight: 100;
+    text-align: center;
+    padding: 6rem 0 2rem;
+}
+
+/* Responsive --------------- */
+
+@media (min-width:800px) {
+    html {
+        font-size: 87.5;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+}
