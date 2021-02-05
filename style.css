@@ -108,7 +108,7 @@ header {
 /* Balance --------------- */
 
 #balance {
-    margin-top: -9rem; 
+    margin-top: -6rem; 
 }
 
 #balance h2 {
@@ -137,7 +137,7 @@ header {
     padding-top: .5rem;
 }
 
-.card.total {
+.card__total {
     background: var(--green);
     color: white;
 }
@@ -270,4 +270,73 @@ footer {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2rem;
     }
+
+    .card__incomes {
+        position: relative;
+        left: 112%;
+        animation: slide_left 1s ease-out  0s 1 forwards, growth 1s ease-out 0s 1 forwards;
+    }
+
+    .card__expenses {
+        position: relative;
+        animation: growth 1s ease-out  0s 1 forwards;
+    }
+
+    .card__total {
+        position: relative;
+        left: -112%;
+        animation: slide_right 1s ease-out  0s 1 forwards, growth 1s ease-out 0s 1 forwards;
+    }
 }
+
+/* Animations --------------- */
+
+@keyframes slide_left {
+    0% {
+      left: 112%;  
+    }
+
+    50% {
+        left: 112%;
+     }
+
+    80% {
+        left: -5%;
+     }
+
+    100% {
+        left: 0%;
+     }
+}
+
+@keyframes slide_right {
+    0% {
+        left: -112%;
+    }
+
+    50% {
+        left: -112%;
+    }
+
+    80% {
+        left: 5%;
+     }
+
+    100% {
+        left: 0%;
+     }
+}
+
+@keyframes growth {
+    0% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+/* 
+@keyframes slide- */
+
+
